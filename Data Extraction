@@ -1,2 +1,8 @@
-Step 1
+Step 1: Setting Up Twitter Application
+
 Go to https://apps.twitter.com/app/new
+
+Create a new application. Provide all the necessary details. 
+
+Generate Token Key. 
+Please note the Consumer key, Consumer Secret, Access Token, and Access Token Secret numbers as they will be used in R later
