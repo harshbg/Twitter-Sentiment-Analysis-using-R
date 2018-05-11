@@ -6,3 +6,32 @@ Create a new application. Provide all the necessary details.
 
 Generate Token Key. 
 Please note the Consumer key, Consumer Secret, Access Token, and Access Token Secret numbers as they will be used in R later
+
+Step 2: Setting Up Twitter Application
+
+#Clear R Environment
+rm(list=ls())
+
+# Load the required R libraries
+
+install.packages("RColorBrewer")
+install.packages("tm")
+install.packages("wordcloud")
+install.packages('base64enc')
+install.packages('ROAuth')
+install.packages('plyr')
+install.packages('stringr')
+install.packages('twitteR')
+
+library(RColorBrewer)
+library(wordcloud)
+library(tm)
+library(twitteR)
+library(ROAuth)
+library(plyr)
+library(stringr)
+library(base64enc)
+
+
+
+download.file(url="http://curl.haxx.se/ca/cacert.pem",destfile="cacert.pem")
