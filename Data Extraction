@@ -35,3 +35,33 @@ library(base64enc)
 
 
 download.file(url="http://curl.haxx.se/ca/cacert.pem",destfile="cacert.pem")
+
+
+#Enter the values that we have found in the previous step
+consumerKey <- "xxx"
+consumerSecret <- "xxx"
+accessToken <- "xxx"
+accessTokenSecret <- "xxx"
+
+# Set constant requestURL
+requestURL <- "https://api.twitter.com/oauth/request_token"
+# Set constant accessURL
+accessURL <- "https://api.twitter.com/oauth/access_token"
+# Set constant authURL
+authURL <- "https://api.twitter.com/oauth/authorize"
+
+setup_twitter_oauth(consumerKey, consumerSecret, accessToken, accessTokenSecret)
+
+
+
+#Objectname <- searchTwitter(searchString, n=no.of tweets, lang=NULL)
+
+namo <- searchTwitter('narendra modi', n=3000, lang=NULL)
+
+
+tweet <- userTimeline('@elonmusk',n=100) #to find the tweets of any specific user 
+
+homeTimeline (n=15) #tweets from own timeline
+mentions (n=15) #tweets where you have been tagged
+
+
