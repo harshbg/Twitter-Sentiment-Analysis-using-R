@@ -25,10 +25,10 @@ library(base64enc)
 download.file(url="http://curl.haxx.se/ca/cacert.pem",destfile="cacert.pem")
 
 
-consumerKey <- "6FM0Y8jJR34uKy0lxSWgDe07a"
-consumerSecret <- "tY3BWT7IgQjIMfbkMd7XpOudh32z1IGr6VRIgzqWKOMpxPvVjg"
-accessToken <- "371128987-snfInkFPgFsKPexGX1IXnloxGS8CGh6hrLebbCpU"
-accessTokenSecret <- "vrKu8mhsfxC7ViHa0fkmIA690Wgv5zevHC1MZCJh5oAE7"
+consumerKey <- "xxxx"
+consumerSecret <- "xxxx"
+accessToken <- "xxxx"
+accessTokenSecret <- "xxxx"
 
 # Set constant requestURL
 requestURL <- "https://api.twitter.com/oauth/request_token"
@@ -57,29 +57,17 @@ namo <- searchTwitter('narendra modi', n=3000, lang="en")
 no.of.tweets <- 1000
 
 ktk <- searchTwitter('#karnatka', n=no.of.tweets, lang="en")
-
 ktk2 <- searchTwitter('#karnatkaelections2018', n=no.of.tweets, lang="en")
-
 ktk3 <- searchTwitter('#karnatkaelection', n=no.of.tweets, lang="en")
-
 ktk4 <- searchTwitter('#battleforkarnatka', n=no.of.tweets, lang="en")
-
 ktk5 <- searchTwitter('#karnatkakurukshetra', n=no.of.tweets, lang="en")
-
 ktk6 <- searchTwitter('#KarnatkaAssembly', n=no.of.tweets, lang="en")
-
 ktk7 <- searchTwitter('#karnatkavoting', n=no.of.tweets, lang="en")
-
 ktk8 <- searchTwitter('#karnatkapolling', n=no.of.tweets, lang="en")
-
 bjp <- searchTwitter('bjp', n=10000, lang="en")
-
 congress <- searchTwitter('congress', n=2000, lang="en")
-
 namo <- searchTwitter('narendra modi', n=2000, lang="en")
-
 raga <- searchTwitter('rahul gandhi', n=2000, lang="en")
-
 
 install.packages("SnowballC")
 library(wordcloud)
@@ -88,19 +76,12 @@ library(tm)
 namo
 
 namo_text_corpus <- iconv(namo_text_corpus, 'UTF-8', 'ASCII')
-
 namo_text <- sapply(namo, function(x) x$getText())
-
 namo_text_corpus <- Corpus(VectorSource(namo_text))
-
 namo_text_corpus <- tm_map(namo_text_corpus, removePunctuation)
-
 namo_text_corpus <- tm_map(namo_text_corpus, content_transformer(tolower))
-
 namo_text_corpus <- tm_map(namo_text_corpus, function(x)removeWords(x,stopwords()))
-
 namo_text_corpus <- tm_map(namo_text_corpus, removeWords, c('RT', 'are','that'))
-
 
 removeURL <- function(x) gsub('http[[:alnum:]]*', '', x)
 namo_text_corpus <- tm_map(namo_text_corpus, content_transformer(removeURL))
@@ -108,25 +89,15 @@ namo_text_corpus <- tm_map(namo_text_corpus, content_transformer(removeURL))
 insta_2 <- TermDocumentMatrix(namo_text_corpus)
 insta_2 <- as.matrix(insta_2)
 insta_2 <- sort(rowSums(insta_2),decreasing=TRUE)
-
-
 
 namo_text_corpus=str_replace_all(namo_text_corpus,"[^[:graph:]]", " ") 
-
 tm_map(namo_text_corpus, function(x) iconv(enc2utf8(x), sub = "byte"))
-
 namo_text <- sapply(bjp, function(x) x$getText())
-
 namo_text_corpus <- Corpus(VectorSource(namo_text))
-
 namo_text_corpus <- tm_map(namo_text_corpus, removePunctuation)
-
 namo_text_corpus <- tm_map(namo_text_corpus, content_transformer(tolower))
-
 namo_text_corpus <- tm_map(namo_text_corpus, function(x)removeWords(x,stopwords()))
-
 namo_text_corpus <- tm_map(namo_text_corpus, removeWords, c('RT', 'are','that'))
-
 
 removeURL <- function(x) gsub('http[[:alnum:]]*', '', x)
 namo_text_corpus <- tm_map(namo_text_corpus, content_transformer(removeURL))
@@ -134,16 +105,13 @@ namo_text_corpus <- tm_map(namo_text_corpus, content_transformer(removeURL))
 insta_2 <- TermDocumentMatrix(namo_text_corpus)
 insta_2 <- as.matrix(insta_2)
 insta_2 <- sort(rowSums(insta_2),decreasing=TRUE)
-
 
 deleteStatus(kapil9994)
 
 
 ##############Sentiment Analysis###########
-
 getwd()
 setwd('D:\\Project\\Sentiment Analysis')
-
 
 pos.words <- read.csv('positive.csv')
 neg.words <- read.csv('negative.csv')
@@ -151,9 +119,7 @@ neg.words <- read.csv('negative.csv')
 pos.words <- scan('positive.csv',what = 'character')
 neg.words <- scan('negative.csv',what = 'character')
 
-
 pos.words = c(pos.words, 'new','nice' ,'good', 'horizon')
-
 neg.words = c(neg.words, 'wtf', 'behind','feels', 'ugly', 'back','worse' , 'shitty', 'bad', 
               'freaking','sucks','horrible')
 
@@ -203,55 +169,32 @@ score.sentiment = function(sentences, pos.words, neg.words, .progress='none')
 
 
 ##Narendra Modi
-
 namog <- ldply(namo,function(t) t$toDataFrame() )
-
 result1 <- score.sentiment(namog$text,pos.words,neg.words)
 summary(result1$score)
-
 hist(result1$score,col = 'dark orange', main = 'Sentiment Analysis for Narendra Modi ', ylab = 'Count of tweets')
-
 count(result1$score)
-
 library(xlsx)
 write.xlsx(result1, "myResults.xlsx")
 
-
 ##BJP
-
 bjpg <- ldply(bjp,function(t) t$toDataFrame() )
-
 result2 <- score.sentiment(bjpg$text,pos.words,neg.words)
 summary(result2$score)
-
 hist(result2$score,col = 'dark orange', main = 'Sentiment Analysis for BJP ', ylab = 'Count of tweets')
-
 count(result2$score)
 
 ##Congress
-
 congg <- ldply(congress,function(t) t$toDataFrame() )
-
 result3 <- score.sentiment(congg$text,pos.words,neg.words)
 summary(result3$score)
-
 hist(result3$score,col = '  blue', main = 'Sentiment Analysis for Congress ', ylab = 'Count of tweets')
-
 count(result3$score)
 
 ##Rahul Gandhi
-
 ragag <- ldply(raga,function(t) t$toDataFrame() )
-
 usableText=str_replace_all(ragag$text,"[^[:graph:]]", " ") 
-
 result4 <- score.sentiment(usableText,pos.words,neg.words)
-
 summary(result4$score)
-
 hist(result4$score,col = ' blue', main = 'Sentiment Analysis for Rahul Gandhi ', ylab = 'Count of tweets')
-
 count(result4$score)
-
-
-
