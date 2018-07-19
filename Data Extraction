@@ -53,7 +53,6 @@ authURL <- "https://api.twitter.com/oauth/authorize"
 setup_twitter_oauth(consumerKey, consumerSecret, accessToken, accessTokenSecret)
 
 
-
 #Objectname <- searchTwitter(searchString, n=no.of tweets, lang=NULL)
 
 namo <- searchTwitter('narendra modi', n=3000, lang=NULL)
