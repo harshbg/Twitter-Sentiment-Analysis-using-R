@@ -116,7 +116,7 @@ To-do list:
 * Expand the horizon of the tweets extracted by including more political parties, leaders, and more hashtgs. 
 
 ## Status
-Project is: _finished_, however, I would like to implement in python using Natural Language Processing.  
+Project is: _finished_, however, I would like to implement sentiment analysis in python using Natural Language Processing.  
 
 ## Inspiration
 Indian news media is filled with upteen number of analysis and statistics during elections. I always fancied everything displayed on the screen and wanted to try hands on with some of the analysis done behind the screen. 
