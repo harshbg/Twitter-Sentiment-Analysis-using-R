@@ -7,7 +7,6 @@ The entire summary of the project can be found in the [presentation](https://git
 * [Screenshots](#screenshots)
 * [Technologies and Tools](#technologies-and-tools)
 * [Setup](#setup)
-* [Process](#process)
 * [Code Examples](#code-examples)
 * [Features](#features)
 * [Status](#status)
@@ -16,7 +15,7 @@ The entire summary of the project can be found in the [presentation](https://git
 
 ## General info
 
-The purpose of the project is to understand how we can extract tweets from twitter and perform sentiment analysis on the same. 
+The purpose of the project is to understand how we can extract tweets from twitter and perform sentiment analysis on it. 
 I find Indian politics very facinating, and since the elections of one of the major state were coming up, I thought it would be interesting to understand how the sentiments are playing for the major parties and their leaders.
 
 ## Screenshots
@@ -31,10 +30,11 @@ I find Indian politics very facinating, and since the elections of one of the ma
 ## Setup
 
 The steps to extract tweets from twitter with specific filters can be found in [data extraction](https://github.com/harshbg/Twitter-Sentiment-Analysis-using-R/blob/master/Data%20Extraction). 
-Two files of positive and negative words have been used to classify the sentiment of the tweets. The [code]() can be used to replicate the results. 
+Two files of positive and negative words have been used to classify the sentiment of the tweets and can be found [here](https://github.com/harshbg/Twitter-Sentiment-Analysis-using-R/tree/master/data). 
+The [code](https://github.com/harshbg/Twitter-Sentiment-Analysis-using-R/blob/master/Sentiment%20Data%20Extraction.R) can be used to replicate the results. 
 
 ## Code Examples
-Show examples of usage:
+Some examples of usage:
 
 ````
 ktk <- searchTwitter('#karnatka', n=no.of.tweets, lang="en")
@@ -97,7 +97,7 @@ core.sentiment = function(sentences, pos.words, neg.words, .progress='none')
 ````
 
 ````
-##Narendra Modi
+## Narendra Modi
 namog <- ldply(namo,function(t) t$toDataFrame() )
 result1 <- score.sentiment(namog$text,pos.words,neg.words)
 summary(result1$score)
@@ -116,10 +116,10 @@ To-do list:
 * Expand the horizon of the tweets extracted by including more political parties, leaders, and more hashtgs. 
 
 ## Status
-Project is: _finished_ however would like to implement in python using Natural Language Processing.  
+Project is: _finished_, however, I would like to implement in python using Natural Language Processing.  
 
 ## Inspiration
-Indian news media is filled with upteen number of analysis and statistics during elections. I always fancied that and wanted to  try hands on with some of the analysis done behind the screen. 
+Indian news media is filled with upteen number of analysis and statistics during elections. I always fancied everything displayed on the screen and wanted to try hands on with some of the analysis done behind the screen. 
 
 ## Contact
 Created by me. Feel free to contact me! My other projects can be found [here](http://www.gupta-harsh.com/projects/).
