@@ -128,4 +128,4 @@ If you loved what you read here and feel like we can collaborate to produce some
 just want to shoot a question, please feel free to connect with me on <a href="hello@gupta-harsh.com" target="_blank">email</a>, 
 <a href="https://www.linkedin.com/in/harshbg/" target="_blank">LinkedIn</a>, or 
 <a href="https://twitter.com/harshbg" target="_blank">Twitter</a>. 
-My other projects can be found [here](http://www.gupta-harsh.com/projects/?utm_source=Github&utm_medium=project).
+My other projects can be found [here](http://bit.ly/2Icu7SE).
