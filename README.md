@@ -1,6 +1,6 @@
 # Twitter Sentiment Analysis using R
 > A detailed sentiment analysis of Karnataka State Elections 2018 in India and gauge its impact on the final results. 
-The entire summary of the project can be found in the [presentation](https://github.com/harshbg/Twitter-Sentiment-Analysis-using-R/blob/master/Sentiment%20Analysis%20of%20Karnatka%20State%20Elections%202018.pdf).
+The entire summary of the project can be found in the [presentation](https://github.com/harshbg/Twitter-Sentiment-Analysis-using-R/blob/master/Sentiment%20Analysis%20of%20Karnatka%20State%20Elections%202018.pdf). The code has been reviewed by [Rachael Tatman](https://github.com/rctatman), Data Scientist at Kaggle, and can be watched on [YouTube](http://bit.ly/2Vi64cH).
 
 ## Table of contents
 * [General info](#general-info)
