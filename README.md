@@ -1,3 +1,4 @@
+[![Language](https://img.shields.io/badge/Made%20with-R-blue.svg)](#technologies-and-tools)
 ![HitCount](http://hits.dwyl.io/harshbg/Twitter-Sentiment-Analysis-using-R.svg)
 
 # Twitter Sentiment Analysis using R
